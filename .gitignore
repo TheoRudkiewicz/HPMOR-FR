@@ -8,7 +8,6 @@ __pycache__
 chapter_list.tex
 
 # Ignore latex generated files
-*.pdf
 *.aux
 *.log
 *.out
