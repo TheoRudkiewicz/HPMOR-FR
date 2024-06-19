@@ -1,4 +1,4 @@
-Ce projet est une version pdf de la traduction française de Harry Potter et les méthodes de la rationalité (Harry Potter and the Methods of Rationality) de Eliezer Yudkowsky.
+Ce projet est une version pdf de la traduction française de *Harry Potter et les méthodes de la rationalité* (*Harry Potter and the Methods of Rationality*) de Eliezer Yudkowsky.
 
 Pour accéder à la version originale en anglais rendez-vous sur le site officiel : http://www.hpmor.com/
 
