@@ -5,6 +5,7 @@ __pycache__
 
 # Automaticaly dowloaded at execution
 .data
+chapter_list.tex
 
 # Ignore latex generated files
 *.pdf

@@ -1,24 +1,21 @@
-# pythontex:
-# 	@pythontex HPMOR.tex --interpreter python:python3.8
+# Define variables
+C := 122
 
-# Variable to store the integer argument
-c = 122
-
-# Rule to generate chapter_list.tex by calling the Python script with the argument c
-chapter_list.tex:
-	python tools.py $(c) > chapter_list.tex
-
-# Rule to compile HPMOR.tex into a PDF
-HPMOR.pdf: 
-	chapter_list.tex
-	pdflatex HPMOR.tex
-
-# Phony targets
-.PHONY: all clean
-
-# Default rule to build the PDF
+# Default target
 all: HPMOR.pdf
 
-# Clean up generated files
+# Generate chapter list
+chapter_list.tex: tools.py
+	python tools.py $(C) > chapter_list.tex
+
+# Build PDF by running pdflatex twice
+HPMOR.pdf: chapter_list.tex HPMOR.tex
+	pdflatex HPMOR.tex
+	pdflatex HPMOR.tex
+
+# Clean all LaTeX compilation useless files
 clean:
-	rm -f chapter_list.tex
+	rm -f chapter_list.tex Source-tex/*.aux *.aux *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz *.bbl *.blg *.brf *.cb *.cb2 *.dvi
+
+.PHONY: all clean
+
